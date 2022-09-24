@@ -1,0 +1,107 @@
+<h3>New Workout</h3>
+
+<h1>Workouts</h1>
+<div class="container">
+    <form action="/new" method="POST">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Select Exercise</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Hovers</a></li>
+                <li><a class="dropdown-item" href="#">Rooting Feet</a></li>
+                <li><a class="dropdown-item" href="#">One Touch</a></li>
+            </ul>
+        </div>
+
+        {{!-- <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div> --}}
+
+
+
+        <div class="dropdown">
+            <div class="input-field">
+                <label for="exercise">Exercise</label>
+                <select id="exercise" name="exercise">
+                    <option value="hovers">Hovers</option>
+                    <option value="one_touch">One Touch</option>
+                    <option value="rooting_feet">Rooting Feet</option>
+                </select>
+                
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="input-field">
+                <label for="status">Grade</label>
+                <select id="status" name="status">
+                    <option value="V0">V0</option>
+                    <option value="V1">V1</option>
+                    <option value="V2">V2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="input-field">
+                <label for="attempts">Attempts</label>
+                <select id="attempts" name="attempts">
+                    <option value="flash">Flash</option>
+                    <option value="onsight">Onsight</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <!--<a href="/dashboard" class="btn orange">Cancel</a>-->
+        </div>
+
+    </form>
+</div>
+
+<h3>Current Workout:</h3>
+<h3>Welcome {{name}}</h3>
+<p>Here is your current workout</p>
+{{#if workouts}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Grade</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each workouts}}
+                <tr>
+                    <td>{{exercise}}</td>
+                    <td>{{attempts}}</td>
+                    <td>{{status}}</td>
+                    {{!-- <td>
+                        <a href="/stories/edit/{{_id}}" class="btn btn-float">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <form action="/stories/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td> --}}
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not created any workouts. Add one now!</p>
+{{/if}}
