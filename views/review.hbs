@@ -1,1 +1,40 @@
 <h3>Review Past Workouts</h3>
+
+<div class="container bg-secondary w-50 float-start">
+     <div class="row">
+        <form action="/new/{{workout._id}}" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+           <div class="col-xl-4 mt-2">
+                <select class="form-select" name="exercise" id="exercise">
+                    <option value="{{workout.exercise}}">{{workout.exercise}}</option>
+                    <option value="Hovers">Hovers</option>
+                    <option value="One Touch">One Touch</option>
+                    <option value="Rooting - Feet">Rooting Feet</option>
+                </select>
+           </div>
+           <div class="col-xl-4 mt-2">
+                <select class="form-select" name="attempts" id="attempts">
+                    <option value="{{workout.attempts}}">{{workout.attempts}}</option>
+                    <option value="Flash">Flash</option>
+                    <option value="Onsight">Onsight</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+           </div>
+           <div class="col-xl-4 mt-2 mb-2">
+                <select class="form-select" name="status" id="status">
+                    <option value="{{workout.status}}">{{workout.status}}</option>
+                    <option value="V0">V0</option>
+                    <option value="V1">V1</option>
+                    <option value="V2">V2</option>
+                </select>
+           </div>
+
+            <div class="col-xl-4">
+                <button class="w-100 btn btn-primary btn-lg mb-2 mt-4" type="submit"><b>Submit</b></button>
+            </div>
+           
+        </form>
+     </div>
+</div>
+
