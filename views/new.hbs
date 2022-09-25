@@ -1,36 +1,51 @@
 <h3>New Workout</h3>
 
-<h1>Workouts</h1>
+<div class="container bg-secondary">
+     <div class="row">
+        <form action="/new" method="POST">
+           <div class="col-sm-12 mt-2">
+                <select class="form-select" name="exercise" id="exercise">
+                    <option value="">Exercise</option>
+                    <option value="Hovers">Hovers</option>
+                    <option value="One Touch">One Touch</option>
+                    <option value="Rooting - Feet">Rooting Feet</option>
+                </select>
+           </div>
+           <div class="col-sm-12 mt-2">
+                <select class="form-select" name="attempts" id="attempts">
+                    <option value="">Attempts</option>
+                    <option value="Flash">Flash</option>
+                    <option value="Onsight">Onsight</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+           </div>
+           <div class="col-sm-12 mt-2 mb-2">
+                <select class="form-select" name="status" id="status">
+                    <option value="">Grade</option>
+                    <option value="V0">V0</option>
+                    <option value="V1">V1</option>
+                    <option value="V2">V2</option>
+                </select>
+           </div>
+
+
+           <button class="w-100 btn btn-primary btn-lg mb-2 mt-4" type="submit"><b>Submit</b></button>
+        </form>
+     </div>
+</div>
+
+{{!-- <h1>Workouts</h1>
 <div class="container">
     <form action="/new" method="POST">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Select Exercise</button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Hovers</a></li>
-                <li><a class="dropdown-item" href="#">Rooting Feet</a></li>
-                <li><a class="dropdown-item" href="#">One Touch</a></li>
-            </ul>
-        </div>
-
-        {{!-- <div class="row">
-            <div class="input-field">
-                <select id="status" name="status">
-                    <option value="public" selected>Public</option>
-                    <option value="private">Private</option>
-                </select>
-                <label for="status">Status</label>
-            </div>
-        </div> --}}
-
-
 
         <div class="dropdown">
             <div class="input-field">
                 <label for="exercise">Exercise</label>
                 <select id="exercise" name="exercise">
-                    <option value="hovers">Hovers</option>
-                    <option value="one_touch">One Touch</option>
-                    <option value="rooting_feet">Rooting Feet</option>
+                    <option value="Hovers">Hovers</option>
+                    <option value="One Touch">One Touch</option>
+                    <option value="Rooting - Feet">Rooting Feet</option>
                 </select>
                 
             </div>
@@ -51,10 +66,10 @@
             <div class="input-field">
                 <label for="attempts">Attempts</label>
                 <select id="attempts" name="attempts">
-                    <option value="flash">Flash</option>
-                    <option value="onsight">Onsight</option>
-                    <option value="two">2</option>
-                    <option value="three">3</option>
+                    <option value="Flash">Flash</option>
+                    <option value="Onsight">Onsight</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                 </select>
             </div>
         </div>
@@ -65,18 +80,17 @@
         </div>
 
     </form>
-</div>
+</div> --}}
 
-<h3>Current Workout:</h3>
-<h3>Welcome {{name}}</h3>
+<h3 class="mt-5">Welcome {{name}}</h3>
 <p>Here is your current workout</p>
 {{#if workouts}}
-    <table class="striped">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>Exercise</th>
-                <th>Grade</th>
-                <th>Status</th>
+                <th scope="col">Exercise</th>
+                <th scope="col">Attempts</th>
+                <th scope="col">Grade</th>
                 <th></th>
             </tr>
         </thead>

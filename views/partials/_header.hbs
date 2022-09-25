@@ -1,13 +1,20 @@
-<nav class="grey darken-3">
-    <div class="class nav-wrapper container">
-        <a href="#!" class="brand-logo center">StoryBooks - Mayanwolfe</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="/dashboard">Home Screen</a></li>
-            <li><a href="/new">New Workout</a></li>
-            <li><a href="/current">Review/Edit Current Workout</a></li>
-            <li><a href="/review">Review Past Workouts</a></li>
-            <li><a href="/auth/logout">Logout</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <span class="navbar-brand h1 mb-0">Sendgeance</span>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+            <div class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="/dashboard" class="nav-link">Home</a></li>
+                <li class="nav-item nav-link">|</li>
+                <li class="nav-item"><a href="/new" class="nav-link">Start/Review Workout</a></li>
+                <li class="nav-item nav-link">|</li>
+                {{!-- <li class="nav-item"><a href="/current" class="nav-link">Review/Edit Current Workout</a></li> --}}
+                <li class="nav-item"><a href="/review" class="nav-link">Past Workout Review</a></li>
+                <li class="nav-item nav-link">|</li>
+                <li class="nav-item"><a href="/auth/logout" class="nav-link">Logout</a></li>
+            </div>
+        </div>
     </div>
 </nav>
