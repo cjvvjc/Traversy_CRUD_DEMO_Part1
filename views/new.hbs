@@ -8,7 +8,7 @@
                     <option value="">Exercise</option>
                     <option value="Hovers">Hovers</option>
                     <option value="One Touch">One Touch</option>
-                    <option value="Rooting - Feet">Rooting Feet</option>
+                    <option value="Rooting Feet">Rooting Feet</option>
                 </select>
            </div>
            <div class="col-xl-4 mt-2">
@@ -49,7 +49,9 @@
                             <th scope="col">Exercise</th>
                             <th scope="col">Attempts</th>
                             <th scope="col">Grade</th>
-                            {{!-- <th></th> --}}
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,13 +60,18 @@
                                 <td>{{exercise}}</td>
                                 <td>{{attempts}}</td>
                                 <td>{{status}}</td>
+                                <td>{{createdAt}}</td>
                                 <td>
                                     <div class="container-fluid">
-                                        <div class="row float-start w-50">
+                                        <div class="row float-start">
                                             <div class="col-3">
                                                 <a href="/review/{{_id}}" class="btn bg-success"><i class="fas fa-edit"></i></a>
                                             </div>
-                                            <div class="col-3">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="container-fluid">
                                                 <form action="/review/{{_id}}" method="POST" id="delete-form"> {{!--using Method Override--}}
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class="btn bg-danger">
@@ -72,24 +79,7 @@
                                                     </button>
                                                 </form>
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-
-                                    
                                 </td>
-                                {{!-- <td>
-                                    <a href="/stories/edit/{{_id}}" class="btn btn-float">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-
-                                    <form action="/stories/{{_id}}" method="POST" id="delete-form">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn red">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td> --}}
                             </tr>
                         {{/each}}
                     </tbody>
@@ -100,50 +90,3 @@
         </div>
     </div>
 </div>
-
-{{!-- <h1>Workouts</h1>
-<div class="container">
-    <form action="/new" method="POST">
-
-        <div class="dropdown">
-            <div class="input-field">
-                <label for="exercise">Exercise</label>
-                <select id="exercise" name="exercise">
-                    <option value="Hovers">Hovers</option>
-                    <option value="One Touch">One Touch</option>
-                    <option value="Rooting - Feet">Rooting Feet</option>
-                </select>
-                
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <div class="input-field">
-                <label for="status">Grade</label>
-                <select id="status" name="status">
-                    <option value="V0">V0</option>
-                    <option value="V1">V1</option>
-                    <option value="V2">V2</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <div class="input-field">
-                <label for="attempts">Attempts</label>
-                <select id="attempts" name="attempts">
-                    <option value="Flash">Flash</option>
-                    <option value="Onsight">Onsight</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <input type="submit" value="Save" class="btn">
-            <!--<a href="/dashboard" class="btn orange">Cancel</a>-->
-        </div>
-
-    </form>
-</div> --}}
