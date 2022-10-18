@@ -42,7 +42,7 @@ router.get('/new', ensureAuth, async (req,res) => {
     const startDate = new Date().setHours(0)
     const endDate = new Date().setHours(23,59,59)
     try {
-        const workouts = await Workout.find({createdAt: {$gte: startDate, $lt: endDate}}).lean()
+        const workouts = await Workout.find({ user: req.user.id } && {createdAt: {$gte: startDate, $lt: endDate}}).lean()
         res.render('new', {
             name: req.user.firstName,
             workouts,

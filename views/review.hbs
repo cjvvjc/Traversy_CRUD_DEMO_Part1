@@ -1,6 +1,25 @@
 <h3>Review Past Workouts</h3>
 
-<div class="container bg-secondary w-50 float-start">
+<section class="container pb-5">
+  <h2 class="py-2">Datepicker in Bootstrap 5</h2>
+  <form class="row">
+    <label for="date" class="col-1 col-form-label">Date:</label>
+    <div class="col-5">
+      <div class="input-group date" id="datepicker">
+        <input type="text" class="form-control" id="date"/>
+        <span class="input-group-append">
+          <span class="input-group-text bg-light d-block">
+            <i class="fa fa-calendar"></i>
+          </span>
+        </span>
+      </div>c 
+    </div>
+  </form>
+</section>
+
+    
+
+{{!-- <div class="container bg-secondary w-50 float-start">
      <div class="row">
         <form action="/new/{{workout._id}}" method="POST">
             <input type="hidden" name="_method" value="PUT">
@@ -22,8 +41,8 @@
                 </select>
            </div>
            <div class="col-xl-4 mt-2 mb-2">
-                <select class="form-select" name="status" id="status">
-                    <option value="{{workout.status}}">{{workout.status}}</option>
+                <select class="form-select" name="grade" id="grade">
+                    <option value="{{workout.grade}}">{{workout.grade}}</option>
                     <option value="V0">V0</option>
                     <option value="V1">V1</option>
                     <option value="V2">V2</option>
@@ -36,5 +55,5 @@
            
         </form>
      </div>
-</div>
+</div> --}}
 

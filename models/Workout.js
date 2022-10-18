@@ -9,7 +9,7 @@ const WorkoutSchema = new mongoose.Schema({
       type: String,
       required: false
     },
-    status: {
+    grade: {
       type: String,
       required: false
     },
