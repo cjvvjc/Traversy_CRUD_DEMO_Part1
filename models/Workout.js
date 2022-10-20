@@ -13,6 +13,14 @@ const WorkoutSchema = new mongoose.Schema({
       type: String,
       required: false
     },
+    angle: {
+      type: String,
+      required: false
+    },
+    send: {
+      type: String,
+      required: false
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',

@@ -42,7 +42,7 @@ router.get('/new', ensureAuth, async (req,res) => {
     const startDate = new Date().setHours(0)
     const endDate = new Date().setHours(23,59,59)
     try {
-        const workouts = await Workout.find({ user: req.user.id } && {createdAt: {$gte: startDate, $lt: endDate}}).lean()
+        const workouts = await Workout.find({ user: req.user.id, createdAt: {$gte: startDate, $lt: endDate}}).lean()
         res.render('new', {
             name: req.user.firstName,
             workouts,
@@ -55,18 +55,26 @@ router.get('/new', ensureAuth, async (req,res) => {
 
 //, {createdAt: { $gte: '2022-10-05', $lt: '2022-10-05'}}
 
-//@desc Current workout
-//@route GET /current
-router.get('/current', ensureAuth, (req,res) => {
-    console.log(req.user)
-    res.render('current')
-})
+// //@desc Current workout
+// //@route GET /current
+// router.get('/current', ensureAuth, (req,res) => {
+//     console.log(req.user)
+//     res.render('current')
+// })
 
 //@desc Review workouts
-//@route GET /review
-router.get('/review', ensureAuth, (req,res) => {
-    console.log(req.user)
-    res.render('review')
+//@route Get /review
+router.get('/review', ensureAuth, async (req,res) => {
+    try {
+        const workouts = await Workout.find({ user: req.user.id }).lean()
+        res.render('review', {
+            name: req.user.firstName,
+            workouts,
+        })
+    } catch (err) {
+        console.error(err)
+        res.render('error/500')
+    }
 })
 
 module.exports = router
